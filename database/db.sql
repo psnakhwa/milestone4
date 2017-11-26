@@ -1,0 +1,12 @@
+create database CSC_510_Project;
+use CSC_510_Project;
+create table user_info(User_ID varchar(255) NOT NULL, Email_ID varchar(255), PRIMARY KEY (User_ID));
+create table user_tags(User_ID varchar(255) NOT NULL, skill varchar(255), PRIMARY KEY (User_ID,Skill),FOREIGN KEY (User_ID) REFERENCES user_info(User_ID));
+create table issue_assignee(Issue_ID int NOT NULL, User_ID varchar(255), PRIMARY KEY (Issue_ID),FOREIGN KEY (User_ID) REFERENCES user_info(User_ID));
+create table issue_tags(Issue_ID int NOT NULL, tags varchar(255), PRIMARY KEY (Issue_ID,tags),FOREIGN KEY (Issue_ID) REFERENCES issue_assignee(Issue_ID));
+create table issue_reviewer(Issue_ID int NOT NULL, User_ID varchar(255), PRIMARY KEY (Issue_ID,User_ID),FOREIGN KEY (Issue_ID) REFERENCES issue_assignee(Issue_ID));
+insert into user_info values ("asagarwa","asagarwa@ncsu.edu"),("psnakhwa","psnakhwa@ncsu.edu"),("sbshete","sbshete@ncsu.edu"),("sagupta","sagupta@ncsu.edu"),("dupandit","dupandit@ncsu.edu");
+insert into user_tags values ("asagarwa","python"),("asagarwa","java"),("sbshete","java"),("sbshete","c++"),("sagupta","ruby"),("psnakhwa","swift"),("psnakhwa","go"),("dupandit","javascript");
+insert into issue_assignee values ("1","sbshete"),("2","asagarwa"),("3","dupandit"),("4","sagupta"),("5","psnakhwa");
+insert into issue_tags values ("1","java"),("1","c++"),("2","python"),("3","javascript"),("4","ruby"),("5","swift"),("5","go");
+insert into issue_reviewer values ("1","asagarwa"),("1","sagupta"),("2","psnakhwa"),("2","dupandit"),("3","sagupta"),("3","asagarwa"),("4","sbshete"),("5","dupandit");
