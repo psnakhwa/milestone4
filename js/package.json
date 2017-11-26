@@ -1,0 +1,25 @@
+{
+  "name": "trazibot",
+  "version": "1.0.0",
+  "description": "initial setup",
+  "main": "trazibot.js",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "file": "latest",
+    "nock": "^9.0.25"
+  },
+  "devDependencies": {
+      "sinon":"latest",
+      "describe":"latest",
+      "mocha":"latest",
+      "nock":"latest",
+      "request":"latest",
+      "underscore":"latest",
+      "botkit":"latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shrikant",
+  "license": "ISC"
+}
